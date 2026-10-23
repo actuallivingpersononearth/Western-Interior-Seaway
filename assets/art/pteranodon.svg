@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24 0 840 360">
+  <!-- Pteranodon longiceps in a banking turn, heading right. Original drawing for this site.
+       The body rolls toward the viewer: the near wing dips toward us (foreshortened, pale underside),
+       the far wing is raised behind. Light from the upper left. -->
+  <defs>
+    <linearGradient id="pt-body" x1="0" y1="128" x2="0" y2="226" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5a4a3d"/>
+      <stop offset=".28" stop-color="#7c6652"/>
+      <stop offset=".5" stop-color="#b79d7c"/>
+      <stop offset=".72" stop-color="#e6d5b3"/>
+      <stop offset="1" stop-color="#c7ae88"/>
+    </linearGradient>
+    <linearGradient id="pt-crest" x1="580" y1="130" x2="468" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9a4628"/>
+      <stop offset=".45" stop-color="#cc6a38"/>
+      <stop offset="1" stop-color="#eaa462"/>
+    </linearGradient>
+    <linearGradient id="pt-beak" x1="0" y1="116" x2="0" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ad8e5e"/>
+      <stop offset=".45" stop-color="#e2cda2"/>
+      <stop offset="1" stop-color="#cbb082"/>
+    </linearGradient>
+    <linearGradient id="pt-near-g" x1="480" y1="200" x2="70" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eedcb8"/>
+      <stop offset=".5" stop-color="#e2c79c"/>
+      <stop offset="1" stop-color="#c69f72"/>
+    </linearGradient>
+    <linearGradient id="pt-far-g" x1="450" y1="160" x2="160" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a88a68"/>
+      <stop offset=".6" stop-color="#9a7d5f"/>
+      <stop offset="1" stop-color="#7f6650"/>
+    </linearGradient>
+    <linearGradient id="pt-legh" x1="380" y1="0" x2="250" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d2bb97"/>
+      <stop offset=".4" stop-color="#a68a6a"/>
+      <stop offset="1" stop-color="#6e5946"/>
+    </linearGradient>
+    <radialGradient id="pt-eye" cx=".4" cy=".35" r=".7">
+      <stop offset="0" stop-color="#f0c766"/>
+      <stop offset=".55" stop-color="#a0601e"/>
+      <stop offset="1" stop-color="#2e1a08"/>
+    </radialGradient>
+    <!-- Short pycnofibres: a soft fuzz over body and neck -->
+    <pattern id="pt-fuzz" width="6" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-20)">
+      <path d="M0,4 L3,1.5 M3,5 L6,2.5" fill="none" stroke="#2a1e15" stroke-width=".6"/>
+    </pattern>
+    <filter id="pt-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="11"/>
+      <feColorMatrix values="0 0 0 0 .12  0 0 0 0 .08  0 0 0 0 .05  0 0 0 .6 -.2"/>
+    </filter>
+    <filter id="pt-soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="pt-softer" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+
+    <!-- Torso, neck and head with crest as one silhouette -->
+    <path id="pt-outline" d="M336,200 C344,194 354,190 366,184 C384,176 404,170 426,164
+      C440,160 454,158 466,156 C484,152 500,146 516,140 C530,135 542,131 556,126
+      C540,108 510,84 468,58 C514,74 556,90 592,102
+      C596,96 606,94 612,100 C643,124 674,150 708,176
+      C686,171 658,164 632,159 C616,157 604,157 596,159
+      C582,170 562,182 548,188 C536,194 528,200 526,210
+      C524,222 514,230 498,231 C478,232 456,226 432,224 C410,222 390,218 372,212
+      C358,208 346,204 336,200 Z"/>
+    <clipPath id="pt-clip"><use href="#pt-outline"/></clipPath>
+
+    <!-- Near wing: leading edge runs down from the shoulder to the wrist, then the wing finger
+         sweeps back to the tip; trailing edge returns to the ankle. -->
+    <path id="pt-near" d="M496,196 C494,214 486,232 474,246 C458,262 440,278 420,292
+      C412,298 406,304 400,312 C320,322 200,330 52,334
+      C130,320 190,306 230,286 C260,270 280,250 296,232
+      C330,226 370,222 404,220 C440,216 470,210 496,196 Z"/>
+    <clipPath id="pt-nclip"><use href="#pt-near"/></clipPath>
+    <!-- Far wing, raised behind the body -->
+    <path id="pt-far" d="M462,160 C458,140 452,120 444,104 C436,90 428,76 420,66
+      C416,60 412,54 408,50 C330,38 250,26 150,18
+      C230,40 292,66 332,102 C352,126 364,158 372,186
+      C396,180 410,174 462,160 Z"/>
+    <clipPath id="pt-fclip"><use href="#pt-far"/></clipPath>
+  </defs>
+
+  <g transform="translate(462 160) scale(.92) translate(-462 -160)">
+  <!-- Far wing: underside in shade -->
+  <use href="#pt-far" fill="url(#pt-far-g)"/>
+  <g clip-path="url(#pt-fclip)">
+    <rect x="0" y="0" width="840" height="360" filter="url(#pt-grain)" opacity=".6"/>
+    <path d="M462,160 C452,120 436,84 410,52 C330,40 250,28 152,20" fill="none" stroke="#5e4835" stroke-width="13" opacity=".55" filter="url(#pt-soft)"/>
+    <path d="M454,150 C446,118 432,90 414,60 C340,48 260,36 170,26" fill="none" stroke="#5a4433" stroke-width="1.6" opacity=".5"/>
+    <g fill="none" stroke="#c4a988" stroke-width=".8" opacity=".5">
+      <path d="M200,26 C210,32 218,38 226,44"/><path d="M240,30 C254,44 266,58 276,70"/>
+      <path d="M280,34 C298,56 312,80 324,104"/><path d="M320,38 C338,64 352,92 362,122"/>
+      <path d="M360,44 C376,72 388,104 394,138"/><path d="M398,52 C412,82 420,116 424,150"/>
+    </g>
+    <!-- a glimpse of the darker upper surface along the leading edge -->
+    <path d="M462,162 C456,132 444,100 418,64 C412,56 410,52 408,50 C330,38 250,26 150,18" fill="none" stroke="#5d4e43" stroke-width="7" opacity=".8"/>
+    <path d="M150,18 C230,40 292,66 332,102 C352,126 364,158 372,186" fill="none" stroke="#5a4433" stroke-width="10" opacity=".35" filter="url(#pt-softer)"/>
+    <!-- sliver of pale underside where the raised wing leaves the body -->
+    <path d="M372,188 C366,160 354,132 336,108 C356,124 374,150 392,184 Z" fill="#e3caa0" opacity=".85"/>
+    <path d="M374,186 C368,160 356,134 338,110" fill="none" stroke="#6d5340" stroke-width="1" opacity=".6"/>
+  </g>
+  <use href="#pt-far" fill="none" stroke="#1d1611" stroke-width="1.5" stroke-linejoin="round"/>
+  <g fill="none" stroke="#2a1e14" stroke-width="1.7" stroke-linecap="round">
+    <path d="M410,52 C416,44 422,40 430,40"/><path d="M412,55 C420,52 428,52 434,54"/>
+  </g>
+  </g>
+
+  <!-- Far leg peeking out behind -->
+  <path d="M356,196 C342,198 326,200 312,202 L298,202 L310,197 C326,195 340,192 354,189 Z" fill="#6b5645" stroke="#1d1611" stroke-width="1.2" stroke-linejoin="round"/>
+
+  <!-- Body, neck and head -->
+  <use href="#pt-outline" fill="url(#pt-body)"/>
+  <g clip-path="url(#pt-clip)">
+    <rect x="330" y="120" width="270" height="110" fill="url(#pt-fuzz)" opacity=".22"/>
+    <rect x="0" y="0" width="840" height="360" filter="url(#pt-grain)"/>
+    <!-- horny beak; lower jaw seen a little from below -->
+    <path d="M610,90 C642,112 682,140 714,178 L714,196 L586,196 C590,166 600,128 610,90 Z" fill="url(#pt-beak)"/>
+    <!-- top plane of the beak, seen because the head turns toward us -->
+    <path d="M608,98 C643,122 674,148 708,176 C680,154 648,136 610,124 Z" fill="#f6ead0" opacity=".75"/>
+    <path d="M612,104 C640,118 668,138 690,162" fill="none" stroke="#fffaf0" stroke-width="3" opacity=".5" filter="url(#pt-soft)"/>
+    <path d="M596,154 C624,156 678,164 708,176 L714,196 L586,196 Z" fill="#efe2c4" opacity=".55"/>
+    <path d="M682,154 L714,176 L714,196 L676,172 Z" fill="#6f5638" opacity=".45"/>
+    <!-- pale chest and fore-neck facing the viewer -->
+    <path d="M596,166 C574,178 552,188 534,204" fill="none" stroke="#f4e9d0" stroke-width="22" opacity=".7" filter="url(#pt-soft)"/>
+    <ellipse cx="510" cy="210" rx="17" ry="20" fill="#f8efdc" opacity=".85" filter="url(#pt-soft)"/>
+    <path d="M520,196 C512,206 508,218 506,228" fill="none" stroke="#a88e6c" stroke-width="2" opacity=".35" filter="url(#pt-soft)"/>
+    <path d="M556,130 C534,140 510,148 486,154" fill="none" stroke="#4a3a2e" stroke-width="6" opacity=".35" filter="url(#pt-soft)"/>
+    <!-- crest -->
+    <path d="M556,126 C540,108 510,84 468,58 C514,74 556,90 592,102 C594,116 574,128 556,126 Z" fill="url(#pt-crest)"/>
+    <!-- crest seen at an angle: its broad near face catches the light, far edge in shade -->
+    <path d="M472,61 C516,78 558,94 590,106 C584,116 572,120 562,120 C540,102 510,80 472,61 Z" fill="#f2ae6e" opacity=".5"/>
+    <path d="M556,126 C540,108 510,84 470,60" fill="none" stroke="#7d3519" stroke-width="3" opacity=".55"/>
+    <g fill="none" stroke="#7d3519" stroke-width="1" opacity=".45">
+      <path d="M574,118 C552,104 524,86 494,72"/>
+    </g>
+    <path d="M590,108 C560,94 524,80 488,68" fill="none" stroke="#f6c690" stroke-width="4" opacity=".6" filter="url(#pt-soft)"/>
+    <!-- shoulder and chest volume -->
+    <ellipse cx="470" cy="188" rx="34" ry="22" fill="#f2e4c6" opacity=".35" filter="url(#pt-soft)"/>
+    <path d="M520,150 C504,164 498,184 500,206" fill="none" stroke="#6a5440" stroke-width="5" opacity=".35" filter="url(#pt-soft)"/>
+    <!-- mottling along the back -->
+    <g fill="#3b2e24" opacity=".35" filter="url(#pt-soft)">
+      <ellipse cx="420" cy="172" rx="16" ry="5"/><ellipse cx="380" cy="184" rx="10" ry="4"/><ellipse cx="490" cy="152" rx="12" ry="4"/>
+    </g>
+    <!-- ridge highlight -->
+    <path d="M700,170 C672,140 640,118 614,104 M552,130 C510,144 460,158 400,172 C380,178 360,186 344,196" fill="none" stroke="#ecd9ba" stroke-width="5" opacity=".45" filter="url(#pt-soft)"/>
+    <!-- belly shadow -->
+    <path d="M340,206 C380,222 430,232 480,226 C500,222 510,206 512,196" fill="none" stroke="#6a563f" stroke-width="10" opacity=".4" filter="url(#pt-softer)"/>
+  </g>
+  <use href="#pt-outline" fill="none" stroke="#1d1611" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Gape, nostril groove, eye -->
+  <path d="M706,175 C684,165 654,156 628,151 C612,149 602,150 596,153" fill="none" stroke="#2a1e14" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M610,124 C646,136 680,154 704,172" fill="none" stroke="#8a6c44" stroke-width="1.1" opacity=".7"/>
+  <!-- far eye peeking past the top of the skull -->
+  <ellipse cx="604" cy="103" rx="2.4" ry="3" fill="url(#pt-eye)" stroke="#120c08" stroke-width="1"/>
+  <ellipse cx="604.4" cy="103" rx=".8" ry="2.2" fill="#0a0806"/>
+  <path d="M596,98 C600,95 606,95 610,99" fill="none" stroke="#1d1611" stroke-width="1.4" opacity=".75"/>
+  <!-- near eye -->
+  <path d="M604,124 C596,119 586,119 579,124" fill="none" stroke="#1d1611" stroke-width="2" opacity=".75"/>
+  <circle cx="592" cy="132" r="6" fill="url(#pt-eye)" stroke="#120c08" stroke-width="1.5"/>
+  <ellipse cx="592.3" cy="132" rx="1.6" ry="4.5" fill="#0a0806"/>
+  <circle cx="590.2" cy="130" r="1.5" fill="#fff" opacity=".9"/>
+
+  <!-- Near wing: lit underside, dipping toward the viewer -->
+  <use href="#pt-near" fill="url(#pt-near-g)"/>
+  <g clip-path="url(#pt-nclip)">
+    <rect x="0" y="0" width="840" height="360" filter="url(#pt-grain)" opacity=".5"/>
+    <!-- muscle and bone under the leading edge: arm, metacarpal, wing finger -->
+    <path d="M496,198 C492,226 470,258 420,294 C412,300 404,308 400,314 C320,324 200,332 56,336" fill="none" stroke="#8a6644" stroke-width="18" opacity=".55" filter="url(#pt-soft)"/>
+    <path d="M488,204 C484,228 466,254 436,276 L404,308 M404,308 C320,318 200,326 70,332" fill="none" stroke="#6d4f33" stroke-width="2" opacity=".55"/>
+    <path d="M436,276 C440,262 452,248 470,238" fill="none" stroke="#6d4f33" stroke-width="1.3" opacity=".4"/>
+    <!-- actinofibrils, running out toward the tip -->
+    <g fill="none" stroke="#a78659" stroke-width=".8" opacity=".55">
+      <path d="M110,330 C124,326 136,322 146,318"/><path d="M150,328 C166,320 182,312 194,304"/>
+      <path d="M192,324 C210,308 228,292 242,278"/><path d="M234,322 C252,302 270,284 284,264"/>
+      <path d="M276,320 C294,296 310,272 322,252"/><path d="M318,318 C334,292 348,264 356,240"/>
+      <path d="M358,316 C372,288 384,258 392,230"/><path d="M398,306 C410,280 420,254 428,226"/>
+      <path d="M436,274 C446,256 456,236 462,216"/>
+    </g>
+    <!-- soft creases near the body where the membrane slackens -->
+    <path d="M330,236 C360,244 400,248 440,240 M310,246 C350,258 390,264 424,262" fill="none" stroke="#b08e64" stroke-width="3" opacity=".3" filter="url(#pt-soft)"/>
+    <!-- trailing edge shadow -->
+    <path d="M52,334 C130,320 190,306 230,286 C260,270 280,250 296,232" fill="none" stroke="#9c7b52" stroke-width="12" opacity=".45" filter="url(#pt-softer)"/>
+    <!-- translucent sheen -->
+    <path d="M160,316 C240,300 320,280 420,250" fill="none" stroke="#fff6e0" stroke-width="20" opacity=".3" filter="url(#pt-softer)"/>
+  </g>
+  <use href="#pt-near" fill="none" stroke="#1d1611" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- three small clawed fingers at the wrist -->
+  <g fill="none" stroke="#2a1e14" stroke-width="2" stroke-linecap="round">
+    <path d="M404,310 C410,305 416,303 422,304"/><path d="M406,313 C413,312 419,313 424,316"/><path d="M405,316 C410,319 414,322 416,326"/>
+  </g>
+  <g fill="#ece2c8"><path d="M422,304 l4,1 -4,2z"/><path d="M424,316 l3.5,2 -4,1z"/><path d="M416,326 l1,4 -3,-2z"/></g>
+
+  <!-- Near leg trailing, the wing membrane meeting the ankle -->
+  <path d="M392,200 C386,218 366,228 340,232 C324,234 308,234 296,234 L282,233 L278,236 L296,240 C314,241 330,241 346,239 C372,236 396,226 408,208 Z" fill="url(#pt-legh)"/>
+  <path d="M407,212 C394,228 372,236 346,239 C330,241 314,241 296,240 L278,236 L282,233 L296,234 C308,234 324,234 340,232 C350,230 360,228 368,224" fill="none" stroke="#1d1611" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M398,214 C388,226 370,232 350,234" fill="none" stroke="#f0e0c0" stroke-width="2.5" opacity=".45" filter="url(#pt-soft)"/>
+  <g stroke="#2a1e14" stroke-width="1.2" stroke-linecap="round"><path d="M282,233 l-9,-2"/><path d="M279,236 l-10,1"/><path d="M282,238 l-9,3"/></g>
+</svg>

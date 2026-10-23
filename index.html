@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Western Interior Seaway News</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐚</text></svg>">
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+  <!-- Seaway animals at increasing depth in the side margins, swaying slightly (wide screens only). -->
+  <div class="deco" aria-hidden="true">
+    <img class="l" src="assets/art/hesperornis.svg" alt="" style="top:470px;--w:230px" loading="lazy">
+    <img class="r" src="assets/art/elasmosaurus.svg" alt="" style="top:980px;--w:330px" loading="lazy">
+    <img class="l" src="assets/art/tylosaurus.svg" alt="" style="top:1700px;--w:330px" loading="lazy">
+    <img class="r" src="assets/art/cretoxyrhina.svg" alt="" style="top:2450px;--w:280px" loading="lazy">
+    <img class="l" src="assets/art/protostega.svg" alt="" style="top:3200px;--w:250px" loading="lazy">
+    <img class="r flip" src="assets/art/xiphactinus.svg" alt="" style="top:4000px;--w:300px" loading="lazy">
+    <img class="l" src="assets/art/ammonite.svg" alt="" style="top:4800px;--w:170px" loading="lazy">
+    <img class="r flip" src="assets/art/hoploscaphites.svg" alt="" style="top:5500px;--w:160px" loading="lazy">
+    <img class="l" src="assets/art/baculites.svg" alt="" style="top:6200px;--w:170px" loading="lazy">
+  </div>
+
+  <header class="masthead">
+    <img class="ptero far" src="assets/art/pteranodon.svg" alt="" aria-hidden="true">
+    <img class="ptero near" src="assets/art/pteranodon.svg" alt="" aria-hidden="true">
+    <!-- A little Laramidian headland with a Triceratops at the water's edge. -->
+    <div class="land" aria-hidden="true">
+      <img class="trike" src="assets/art/triceratops.svg" alt="">
+      <svg viewBox="0 0 360 110" preserveAspectRatio="none">
+        <path class="ground" d="M0,110 L0,34 C50,26 110,22 160,26 C210,30 250,42 286,60 C312,74 336,92 360,110 Z"/>
+        <path class="grass" d="M0,36 C50,28 110,24 160,28 C210,32 250,44 286,62" />
+        <path class="beach" d="M262,54 C292,68 326,88 360,110 L340,110 C310,92 280,76 250,62 Z"/>
+        <g class="plants">
+          <path d="M22,34 L24,10 L26,34 Z M24,12 l-10,8 M24,12 l10,8 M24,18 l-12,9 M24,18 l12,9 M24,24 l-13,8 M24,24 l13,8"/>
+          <path d="M40,32 L41,22 M41,22 c-8,-6 -14,-4 -18,0 M41,22 c8,-6 14,-4 18,0 M41,22 c-4,-9 -10,-11 -14,-10 M41,22 c4,-9 10,-11 14,-10"/>
+          <path d="M210,40 L211,30 M211,30 c-7,-5 -12,-3 -15,0 M211,30 c7,-5 12,-3 15,0 M211,30 c-3,-8 -8,-9 -12,-8 M211,30 c3,-8 8,-9 12,-8"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap">
+      <p class="kicker">Fossil news · Late Cretaceous, ~100–66 million years ago</p>
+      <h1>Western Interior Seaway</h1>
+      <p class="dek">Finds from the inland sea that split North America and from the coastal plains on both its shores.</p>
+      <p class="meta" id="updated">Loading…</p>
+    </div>
+    <!-- Distant Laramidian coast, open sea, then the waterline into the page below. -->
+    <svg class="horizon" viewBox="0 0 1440 130" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop class="sea-top" offset="0"/><stop class="sea-bottom" offset="1"/>
+        </linearGradient>
+      </defs>
+      <path class="coast-far" d="M0,62 L0,44 C60,40 110,30 170,34 C230,38 260,26 320,28 C380,30 420,40 480,42 C540,44 600,50 660,54 C700,57 740,60 780,62 Z"/>
+      <path class="coast-near" d="M0,62 L0,50 C40,48 70,42 110,44 C150,46 180,40 220,46 C260,52 300,56 360,62 Z"/>
+      <rect class="sea" x="0" y="62" width="1440" height="68"/>
+    </svg>
+    <!-- The waterline sits in front of the headland so the land sinks into the sea. -->
+    <svg class="horizon waterline" viewBox="0 0 1440 130" preserveAspectRatio="none" aria-hidden="true">
+      <path class="under" d="M0,106 C120,98 240,98 360,106 C480,114 600,116 720,106 C840,96 960,96 1080,106 C1200,116 1320,114 1440,104 L1440,130 L0,130 Z"/>
+    </svg>
+  </header>
+
+  <main class="wrap layout">
+    <aside class="filters panel">
+      <input type="search" id="q" placeholder="Search headlines…" aria-label="Search headlines">
+      <label class="toggle"><input type="checkbox" id="newOnly"> New since my last visit</label>
+      <label class="toggle"><input type="checkbox" id="showUnknown"> Include stories with unconfirmed age</label>
+      <section><h2>Region</h2><div class="chips" id="regions"></div></section>
+      <section><h2>Formation</h2><div class="chips" id="formations"></div></section>
+      <section><h2>Fauna &amp; topic</h2><div class="chips" id="groups"></div></section>
+      <button class="clear" id="clear" type="button">Clear filters</button>
+    </aside>
+
+    <section class="feed">
+      <p class="count" id="count"></p>
+      <ol id="list"></ol>
+      <button class="more" id="more" type="button" hidden>Show more</button>
+    </section>
+  </main>
+
+  <div class="seafloor" aria-hidden="true">
+    <svg class="sand" viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,70 C120,50 240,46 380,62 C520,78 640,84 780,66 C920,48 1060,40 1200,58 C1320,72 1390,70 1440,62 L1440,150 L0,150 Z"/>
+    </svg>
+    <div class="fossils">
+      <svg class="f-ammonite" viewBox="0 0 100 100"><use href="#ammonite"/></svg>
+      <svg class="f-baculites" viewBox="0 0 200 40"><use href="#baculites"/></svg>
+      <svg class="f-inoceramid" viewBox="0 0 100 84"><use href="#inoceramid"/></svg>
+      <svg class="f-tooth" viewBox="0 0 60 70"><use href="#sharktooth"/></svg>
+      <svg class="f-ammonite2" viewBox="0 0 100 100"><use href="#ammonite"/></svg>
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wrap">
+      <p>Headlines are gathered automatically from Google News, ScienceDaily and Phys.org and link to the original publishers; thumbnails are the publishers’ own preview images, shown directly from their sites. A story counts as seaway-era when its headline names a seaway formation, a Late Cretaceous animal, or an age of 66–105 million years; others are marked “age unconfirmed”.</p>
+      <p>The animal illustrations were drawn for this site.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+[
+ {
+  "name": "pteranodon",
+  "label": "Pteranodon",
+  "file": "assets/art/pteranodon.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Pteranodon_TD.png",
+  "artist": "TotalDino",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "modified": false,
+  "size": [
+   835,
+   352
+  ]
+ },
+ {
+  "name": "triceratops",
+  "label": "Triceratops",
+  "file": "assets/art/triceratops.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Triceratops_new_BW.jpg",
+  "artist": "Nobu Tamura",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "modified": true,
+  "size": [
+   718,
+   487
+  ]
+ },
+ {
+  "name": "hesperornis",
+  "label": "Hesperornis",
+  "file": "assets/art/hesperornis.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Hesperornis_BW_(white_background).jpg",
+  "artist": "Nobu Tamura",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "modified": true,
+  "size": [
+   697,
+   286
+  ]
+ },
+ {
+  "name": "elasmosaurus",
+  "label": "Elasmosaurus",
+  "file": "assets/art/elasmosaurus.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Elasmosaurus_platyurus_(transparent).png",
+  "artist": "Dmitry Bogdanov",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "modified": false,
+  "size": [
+   925,
+   325
+  ]
+ },
+ {
+  "name": "tylosaurus",
+  "label": "Tylosaurus",
+  "file": "assets/art/tylosaurus.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Tylosaurus_nepaeolicus_NT.png",
+  "artist": "Nobu Tamura",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "modified": true,
+  "size": [
+   740,
+   232
+  ]
+ },
+ {
+  "name": "cretoxyrhina",
+  "label": "Cretoxyrhina",
+  "file": "assets/art/cretoxyrhina.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Cretoxyrhina_mantelli_21DB.jpg",
+  "artist": "Dmitry Bogdanov",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "modified": true,
+  "size": [
+   903,
+   373
+  ]
+ },
+ {
+  "name": "protostega",
+  "label": "Protostega",
+  "file": "assets/art/protostega.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Protostega_gigas.jpg",
+  "artist": "Dmitry Bogdanov",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "modified": true,
+  "size": [
+   911,
+   676
+  ]
+ },
+ {
+  "name": "xiphactinus",
+  "label": "Xiphactinus",
+  "file": "assets/art/xiphactinus.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Xiphactinus_audax.png",
+  "artist": "Fishboy86164577",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "modified": true,
+  "size": [
+   935,
+   274
+  ]
+ },
+ {
+  "name": "ammonite",
+  "label": "Ammonite",
+  "file": "assets/art/ammonite.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:202002_ammonite.png",
+  "artist": "DataBase Center for Life Science (DBCLS)",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0",
+  "modified": false,
+  "size": [
+   394,
+   395
+  ]
+ },
+ {
+  "name": "hoploscaphites",
+  "label": "Hoploscaphites",
+  "file": "assets/art/hoploscaphites.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Hoploscaphites_restoration.jpg",
+  "artist": "El fosilmaníaco",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "modified": true,
+  "size": [
+   723,
+   638
+  ]
+ },
+ {
+  "name": "baculites",
+  "label": "Baculites",
+  "file": "assets/art/baculites.webp",
+  "source": "https://commons.wikimedia.org/wiki/File:Baculites_restoration.jpg",
+  "artist": "El fosilmaníaco",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "modified": true,
+  "size": [
+   933,
+   1173
+  ]
+ }
+]

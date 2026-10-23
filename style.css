@@ -1,0 +1,245 @@
+:root {
+  /* Dark (dusk and deep sea) is the default for everyone. */
+  color-scheme: dark;
+  --surface: #0d2733;
+  --depth: #030c13;
+  --paper: rgba(13, 42, 54, .86);
+  --paper-solid: #0f2c38;
+  --ink: #def3f3;
+  --muted: #8db2ba;
+  --line: #1f4654;
+  --accent: #52d0c4;
+  --accent-soft: #113d44;
+  --coral: #f0a283;
+  --coral-soft: #3b2620;
+  --deep: #93bdeb;
+  --deep-soft: #172f48;
+  --art-filter: saturate(.75) brightness(.72);
+  /* Dusk above the surface */
+  --sky-top: #142443;
+  --sky-mid: #3b3f68;
+  --sky-low: #c98a6a;
+  --sun: rgba(255, 196, 140, .75);
+  --cloud: rgba(210, 170, 170, .35);
+  --coast-far: #4b4f6c;
+  --coast-near: #33394f;
+  --sea-far: #2b4560;
+  --sea-near: #173247;
+  --sky-ink: #f4ecf0;
+  --land: #3d3a3a;
+  --grass: #4e6146;
+  --sky-kicker: #ffc9a8;
+  --sand: #1d2a2c;
+  --sand-line: #3f5452;
+}
+/* The original daytime palette, kept for an opt-in light theme (<html data-theme="light">). */
+:root[data-theme="light"] {
+  color-scheme: light;
+  /* Underwater */
+  --surface: #dcefee;
+  --depth: #a9d0d6;
+  --paper: rgba(255, 255, 255, .88);
+  --paper-solid: #fbfefe;
+  --ink: #0f2f3a;
+  --muted: #4b6c75;
+  --line: #c6dfe2;
+  --accent: #0d7682;
+  --accent-soft: #d3eded;
+  --coral: #b4553a;
+  --coral-soft: #f8e2d9;
+  --deep: #2b5a88;
+  --deep-soft: #dde8f4;
+  --art-filter: saturate(.9);
+  /* Above the surface */
+  --sky-top: #8fcbe8;
+  --sky-mid: #cfeaf4;
+  --sky-low: #f7efdc;
+  --sun: rgba(255, 244, 205, .95);
+  --cloud: rgba(255, 255, 255, .85);
+  --coast-far: #9bb7b4;
+  --coast-near: #6f9488;
+  --sea-far: #3f97a8;
+  --sea-near: #2b7f92;
+  --sky-ink: #12313b;
+  --land: #8a7a55;
+  --grass: #5f8a46;
+  --sky-kicker: #0b6b75;
+  /* Seafloor */
+  --sand: #e8dcc4;
+  --sand-line: #b9a582;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--depth); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  /* The page darkens as you scroll down, like sinking through the seaway. */
+  background: linear-gradient(180deg, var(--surface) 0%, var(--depth) 100%);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; position: relative; }
+
+/* ---------- Masthead: above the surface ---------- */
+.masthead {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  color: var(--sky-ink);
+  padding: 40px 0 190px;
+  background:
+    radial-gradient(circle at 82% 34%, var(--sun) 0 34px, transparent 36px),
+    radial-gradient(circle at 82% 34%, var(--sun), transparent 220px),
+    radial-gradient(60px 22px at 18% 30%, var(--cloud), transparent),
+    radial-gradient(110px 26px at 26% 34%, var(--cloud), transparent),
+    radial-gradient(90px 20px at 60% 18%, var(--cloud), transparent),
+    radial-gradient(140px 24px at 68% 22%, var(--cloud), transparent),
+    linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-low) 100%);
+}
+.masthead .wrap { z-index: 2; }
+.kicker { margin: 0; color: var(--sky-kicker); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
+h1 { margin: 4px 0 6px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.1; }
+.dek { margin: 0 0 10px; max-width: 52ch; }
+.meta { margin: 0; font-size: .9rem; opacity: .8; }
+.masthead .ptero {
+  position: absolute; z-index: 1; height: auto;
+  filter: var(--art-filter) drop-shadow(0 10px 8px rgba(0, 40, 60, .15));
+}
+.masthead .ptero.near { width: min(300px, 40vw); right: max(16px, calc(50% - 540px)); top: 54px; rotate: -6deg; animation: glide 12s ease-in-out infinite; }
+.masthead .ptero.far { width: 90px; right: max(260px, calc(50% - 160px)); top: 26px; transform: scaleX(-1); rotate: 8deg; opacity: .7; filter: var(--art-filter) blur(.4px); animation: glide 16s ease-in-out -6s infinite reverse; }
+/* The headland runs from the left edge of the screen; its right end (with the Triceratops) stays near the content. */
+.land { position: absolute; z-index: 2; left: 0; bottom: 0; width: max(260px, calc(50% - 480px)); height: 150px; }
+.land svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 96px; overflow: visible; }
+.land .ground { fill: var(--land); }
+.land .grass { fill: none; stroke: var(--grass); stroke-width: 5; stroke-linecap: round; }
+.land .beach { fill: var(--sand); }
+.land .plants { fill: none; stroke: var(--grass); stroke-width: 2.5; stroke-linecap: round; }
+.land .trike {
+  position: absolute; width: 120px; height: auto; right: 112px; bottom: 70px; transform: scaleX(-1);
+  filter: var(--art-filter) drop-shadow(0 4px 2px rgba(40, 30, 10, .25));
+  transform-origin: 70% 100%; animation: graze 9s ease-in-out infinite;
+}
+.horizon { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 130px; display: block; z-index: 1; }
+.horizon .coast-far { fill: var(--coast-far); }
+.horizon .coast-near { fill: var(--coast-near); }
+.horizon .sea { fill: url(#seaGrad); }
+.horizon .sea-top { stop-color: var(--sea-far); }
+.horizon .sea-bottom { stop-color: var(--sea-near); }
+.horizon .under { fill: var(--surface); }
+.waterline { z-index: 3; }
+@media (max-width: 600px) {
+  .masthead { padding-bottom: 150px; }
+  .masthead .ptero.near { top: auto; bottom: 84px; width: 150px; }
+  .masthead .ptero.far { display: none; }
+  .horizon { height: 100px; }
+  .land { width: 170px; height: 110px; }
+  .land svg { height: 64px; }
+  .land .trike { width: 84px; right: 52px; bottom: 44px; }
+}
+
+/* ---------- Seaway animals at depth in the side margins ---------- */
+.deco { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+/* Each animal keeps its preferred width (--w) but shrinks to fit the margin beside the 1100px content. */
+.deco img { position: absolute; height: auto; filter: var(--art-filter); width: min(var(--w), calc(50vw - 560px));
+  animation: sway 14s ease-in-out infinite; }
+.deco img:nth-child(2n) { animation-duration: 11s; animation-direction: reverse; }
+.deco img:nth-child(3n) { animation-duration: 17s; animation-delay: -5s; }
+.deco img:nth-child(4n) { animation-delay: -8s; }
+.deco .l { right: calc(50% + 556px); }
+.deco .r { left: calc(50% + 556px); }
+.deco .flip { transform: scaleX(-1); }
+@media (max-width: 1359px) { .deco { display: none; } }
+
+/* Small, slow movements: a few pixels of drift and a degree or two of tilt. */
+@keyframes sway { 0%, 100% { translate: 0 0; rotate: 0deg; } 50% { translate: 10px -12px; rotate: -1.5deg; } }
+@keyframes glide { 0%, 100% { translate: 0 0; } 50% { translate: -14px 8px; } }
+@keyframes graze { 0%, 70%, 100% { rotate: 0deg; } 80%, 90% { rotate: 1.2deg; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }
+
+/* ---------- Layout ---------- */
+.layout { display: grid; grid-template-columns: 260px 1fr; gap: 28px; padding-top: 12px; padding-bottom: 32px; position: relative; z-index: 1; }
+@media (max-width: 760px) { .layout { grid-template-columns: 1fr; gap: 16px; } }
+
+.panel { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(6px); }
+.filters { position: sticky; top: 16px; align-self: start; display: flex; flex-direction: column; gap: 16px; padding: 16px; }
+@media (max-width: 760px) { .filters { position: static; } }
+.filters h2 { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 6px; }
+#q {
+  width: 100%; padding: 10px 12px 10px 36px; font: inherit; color: var(--ink);
+  background: var(--paper-solid) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a9aa2' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E") 11px center / 16px no-repeat;
+  border: 1px solid var(--line); border-radius: 10px;
+}
+#q:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.toggle { font-size: .9rem; display: flex; gap: 8px; align-items: flex-start; cursor: pointer; }
+.toggle input { margin-top: 4px; accent-color: var(--accent); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font: inherit; font-size: .8rem; padding: 3px 10px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--paper-solid); color: var(--ink);
+  transition: background .15s, border-color .15s;
+}
+.chip:hover { border-color: var(--accent); }
+.chip .n { color: var(--muted); margin-left: 4px; font-size: .75rem; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--paper-solid); }
+.chip[aria-pressed="true"] .n { color: inherit; opacity: .8; }
+.clear, .more {
+  font: inherit; font-size: .85rem; padding: 8px 12px; border-radius: 10px; cursor: pointer;
+  border: 1px solid var(--line); background: transparent; color: var(--muted);
+}
+.clear:hover, .more:hover { border-color: var(--accent); color: var(--accent); }
+.more { display: block; margin: 18px auto 0; color: var(--ink); background: var(--paper-solid); }
+
+/* ---------- Stories ---------- */
+.count { margin: 0 0 10px; color: var(--muted); font-size: .9rem; }
+#list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.item { display: grid; grid-template-columns: 132px 1fr; gap: 16px; padding: 12px; align-items: start; transition: border-color .15s; }
+.item:hover { border-color: var(--accent); }
+.thumb {
+  display: block; width: 132px; aspect-ratio: 3 / 2; border-radius: 9px; overflow: hidden;
+  background: linear-gradient(160deg, var(--accent-soft), var(--deep-soft));
+  color: var(--accent);
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb svg { width: 100%; height: 100%; display: block; padding: 18px; opacity: .55; }
+.item .body { min-width: 0; padding-top: 2px; }
+.item h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.12rem; line-height: 1.3; font-weight: 600; }
+.item h3 a { text-decoration: none; }
+.item h3 a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.item .src { font-size: .82rem; color: var(--muted); margin-top: 4px; }
+.item .sum { margin: 6px 0 0; font-size: .92rem; color: var(--muted); }
+.item .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+@media (max-width: 520px) {
+  .item { grid-template-columns: 92px 1fr; gap: 12px; padding: 10px; }
+  .thumb { width: 92px; }
+  .item h3 { font-size: 1rem; }
+}
+.tag { font-size: .72rem; padding: 1px 8px; border-radius: 999px; background: var(--coral-soft); color: var(--coral); }
+.tag.fm { background: var(--deep-soft); color: var(--deep); }
+.tag.grp { background: var(--accent-soft); color: var(--accent); }
+.unk { font-size: .72rem; padding: 1px 8px; border-radius: 999px; border: 1px dashed var(--muted); color: var(--muted); }
+.new { font: 700 .66rem/1.6 system-ui, sans-serif; letter-spacing: .06em; color: var(--paper-solid); background: var(--accent); padding: 1px 6px; border-radius: 4px; margin-right: 6px; vertical-align: 3px; }
+.day { margin: 14px 0 0; font-size: .74rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+.day::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.day:first-child { margin-top: 0; }
+.empty { color: var(--muted); padding: 24px 0; }
+
+/* ---------- Seafloor footer with fossils ---------- */
+.seafloor { position: relative; margin-top: 24px; color: var(--sand-line); z-index: 1; }
+.seafloor .sand { display: block; width: 100%; height: 150px; }
+.seafloor .sand path { fill: var(--sand); }
+.seafloor .fossils { position: absolute; inset: 0; max-width: 1100px; margin: 0 auto; }
+.seafloor .fossils svg { position: absolute; }
+.f-ammonite { width: 74px; left: 6%; bottom: 18px; rotate: -12deg; }
+.f-baculites { width: 150px; left: 24%; bottom: 40px; rotate: 6deg; }
+.f-inoceramid { width: 64px; left: 54%; bottom: 24px; rotate: 10deg; }
+.f-tooth { width: 30px; left: 70%; bottom: 50px; rotate: -20deg; }
+.f-ammonite2 { width: 44px; left: 84%; bottom: 30px; rotate: 40deg; }
+@media (max-width: 600px) { .f-baculites, .f-ammonite2 { display: none; } .f-inoceramid { left: 48%; } }
+.foot { background: var(--sand); color: var(--muted); font-size: .8rem; padding: 0 0 28px; margin-top: -1px; position: relative; z-index: 1; }
+.foot p { margin: 0 0 8px; max-width: 90ch; }
+.foot a { color: var(--ink); }

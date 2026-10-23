@@ -1,0 +1,10 @@
+# Local tool state and logs
+.claude/
+.playwright-mcp/
+__pycache__/
+data/fetch.log
+data/.fetch.lock
+data/*.tmp
+
+# Data-building scripts stay local
+scripts/
