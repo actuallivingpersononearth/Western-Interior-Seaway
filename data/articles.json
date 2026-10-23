@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T00:48:50.014763+00:00",
+ "updated": "2026-10-23T01:09:20.024234+00:00",
  "articles": [
   {
    "title": "Dinosaur fossils dug up in Utah reveal new species",
@@ -2285,7 +2285,9 @@
    "age": "unknown",
    "search_tried": true,
    "url": "https://www.afar.com/magazine/why-wyoming-is-such-a-hot-spot-for-fossil-travel",
-   "thumb_tries": 1
+   "thumb_tries": 1,
+   "thumb": "https://afar.brightspotcdn.com/dims4/default/2648a1b/2147483647/strip/true/crop/2000x1000+0+162/resize/1440x720!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2Fb6%2Fa6%2F55e94b2447e197345ae80b62457a%2Fwyoming-jean-pierre-cavigelli-tate-geological-museum-pr-credit-candids-with-cait.jpg",
+   "thumb_checked": "2026-10-23T01:09:20.024234+00:00"
   },
   {
    "title": "A Student Unearthed a Rare 75-Million-Year-Old Dragonfly Fossil in an Alberta Park, Marking a First of Its Kind",
@@ -3210,7 +3212,8 @@
    "formations": [],
    "groups": [],
    "age": "cretaceous",
-   "thumb_tries": 1
+   "thumb_tries": 2,
+   "thumb_checked": "2026-10-23T01:09:20.024234+00:00"
   },
   {
    "title": "Scientists Unearth Rare, Perfectly Preserved Dinosaur Mummy in Minnesota",
@@ -5764,7 +5767,7 @@
    "age": "unknown",
    "search_tried": true,
    "url": "https://www.ledger-enquirer.com/news/state/alabama/article260129375.html",
-   "thumb_tries": 1
+   "thumb_tries": 2
   },
   {
    "title": "Ammolite is the Alberta gemstone 75 million years in the making",
@@ -7492,7 +7495,9 @@
    "age": "cretaceous",
    "search_tried": true,
    "url": "https://www.cbc.ca/news/science/mercuriceratops-gemini-dinosaur-had-wing-like-headgear-1.2681084",
-   "thumb_tries": 1
+   "thumb_tries": 1,
+   "thumb": "https://i.cbc.ca/ais/1.2681091,1403203997000/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C57%2C664%2C373%29%3BResize%3D620",
+   "thumb_checked": "2026-10-23T01:09:20.024234+00:00"
   },
   {
    "title": "Mercuriceratops: New Long-Horned Dinosaur Discovered",
